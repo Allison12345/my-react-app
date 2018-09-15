@@ -33,7 +33,7 @@ class Comment extends Component {
       text: 'this is a lovely kity',
       author: {
         name: 'kity',
-        avatarUrl: "./logo.svgnpm "
+        avatarUrl: require("./logo.png" )
       }
     }
   }
