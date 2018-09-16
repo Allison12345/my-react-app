@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import Toggle from './toggle'
+import LoginControl from "./login"
 
-ReactDOM.render(<Toggle
+
+ReactDOM.render(<LoginControl
     />, document.getElementById('root'));
 registerServiceWorker();
