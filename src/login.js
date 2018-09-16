@@ -30,10 +30,10 @@ class LoginControl extends Component {
     )
   }
 }
-function UserGreeting(props) {
+function UserGreeting() {
   return <h1>Welcome back</h1>
 }
-function GuestGreeting(props) {
+function GuestGreeting() {
   return <h1>Please sign up</h1>
 }
 function Greeting(props) {
@@ -51,3 +51,4 @@ function LogoutButton(props) {
 }
 
 export default LoginControl
+  

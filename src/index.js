@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import LoginControl from "./login"
+import Page from "./warn"
 
 
-ReactDOM.render(<LoginControl
+ReactDOM.render(<Page
     />, document.getElementById('root'));
 registerServiceWorker();
