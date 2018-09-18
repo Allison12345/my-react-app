@@ -13,7 +13,7 @@ class NameFrom extends Component {
   }
   handkeSubmit(event) {
     
-    alert('A name was submit' + this.state.value)
+    alert('A name was submit ' + this.state.value)
     event.preventDefault()
   }
   render() {

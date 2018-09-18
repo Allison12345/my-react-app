@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom'
 import './index.css'
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker'
-import NameFrom from './name-form';
+import FavorFrom from './select';
 
 ReactDOM.render(
-  <NameFrom />,
+  <FavorFrom />,
   document.getElementById('root')
 )
 registerServiceWorker()
