@@ -4,7 +4,7 @@ import './index.css'
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker'
 
-import Calculator from './tem-tranfer';
+import Calculator from './tem-transfer';
 
 ReactDOM.render(
   <Calculator />,
