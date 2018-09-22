@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom'
 import './index.css'
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker'
-
-import Calculator from './tem-transfer';
+import SignUpDialog from './dialog';
 
 ReactDOM.render(
-  <Calculator />,
+  <SignUpDialog />,
   document.getElementById('root')
 )
 registerServiceWorker()
