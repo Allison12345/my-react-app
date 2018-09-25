@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom'
 import './index.css'
 // import App from './App';
 import registerServiceWorker from './registerServiceWorker'
-import SignUpDialog from './dialog';
+
+import FilterableProductTable from './table';
 
 ReactDOM.render(
-  <SignUpDialog />,
+  <FilterableProductTable  />,
   document.getElementById('root')
 )
 registerServiceWorker()
