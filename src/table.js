@@ -1,11 +1,20 @@
 import React ,{Component} from "react"
 
+const products = [
+    {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
+    {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
+    {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
+    {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
+    {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
+    {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
+  ];
 class FilterableProductTable extends Component{
     constructor(props){
         super(props)
         this.state = {
             filterText : "",
-            inStockOnly : false
+            inStockOnly : false,
+            products:products
         }
         this.handleFilterTextInput = this.handleFilterTextInput.bind(this)
         this.handleInStockInput = this.handleInStockInput.bind(this)
@@ -25,11 +34,14 @@ class FilterableProductTable extends Component{
             <div>
             <SearchBar
             filterText={this.state.filterText}
-            inStockOnly={this.setState.inStockOnly}
+            inStockOnly={this.state.inStockOnly}
+            onFilterTextInput={this.handleFilterTextInput}
+            onStockOnly={this.handleInStockInput}
             />
             <ProductTable
             filterText={this.state.filterText}
-            inStockOnly={this.setState.inStockOnly}/>
+            products={this.state.products}
+            inStockOnly={this.state.inStockOnly}/>
             </div>
             )
     }
@@ -43,8 +55,8 @@ class SearchBar extends Component{
     handleFilterTextInputChange(e){
         this.props.onFilterTextInput(e.target.value)
     }
-    handleInStockInputChange(e){
-        this.props.onStockOnly(e.target.check)
+    handleInStockInputChange(){
+        this.props.onStockOnly(!this.props.inStockOnly)
     }
     render(){
         return(
@@ -115,12 +127,5 @@ class ProductRow extends Component{
     </tr>)
     }
 }
-const products = [
-    {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
-    {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
-    {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
-    {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
-    {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
-    {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
-  ];
+
   export default FilterableProductTable

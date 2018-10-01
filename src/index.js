@@ -5,9 +5,9 @@ import './index.css'
 import registerServiceWorker from './registerServiceWorker'
 
 import FilterableProductTable from './table';
-
+import Products from './table'
 ReactDOM.render(
-  <FilterableProductTable  />,
+  <FilterableProductTable Products={Products} />,
   document.getElementById('root')
 )
 registerServiceWorker()
