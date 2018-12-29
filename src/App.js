@@ -3,8 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 import Person from './Person'
 import TodoApp from './Todo'
-import MarkdownEditor from './Markdown';
-
+import MarkdownEditor from './Markdown'
 
 class Jack extends Component {
   render() {
@@ -14,7 +13,7 @@ class Jack extends Component {
 class Timer extends Component {
   constructor(props) {
     super(props)
-    this.state = { seconds: 0 }
+    this.state = { seconds: 0, date: new Date() }
   }
 
   tick() {
@@ -29,10 +28,14 @@ class Timer extends Component {
     clearInterval(this.interval)
   }
   render() {
-    return <div>Seconds:{this.state.seconds}</div>
+    return (
+      <div>
+        Seconds:{this.state.seconds}
+        
+      </div>
+    )
   }
 }
-
 
 class App extends Component {
   constructor(props) {
@@ -41,9 +44,9 @@ class App extends Component {
       persons: ['hello', 'hi', 'world'],
       name: 'aijiao'
     }
-    const arr1 = [1,2,3]
+    const arr1 = [1, 2, 3]
     const arr2 = arr1.slice()
-    const arr3 = [...arr1,4,5,6]
+    const arr3 = [...arr1, 4, 5, 6]
   }
   onClick = () => {
     const persons = this.state.persons
@@ -69,8 +72,7 @@ class App extends Component {
         <Jack name={this.state.name} />
         <Timer />
         <TodoApp />
-        <MarkdownEditor/>
-       
+        <MarkdownEditor />
       </div>
     )
   }

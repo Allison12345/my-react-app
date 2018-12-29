@@ -39,7 +39,7 @@ class MarkdownEditor extends Component {
           dangerouslySetInnerHTML={this.getRawMarkup()}
         />
         <h3>Output2</h3>
-        <div className="content">{this.getRawMarkup().__html}</div>
+        <div className="content" >{this.getRawMarkup().__html}</div>
       </div>
     )
   }
