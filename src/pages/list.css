@@ -1,0 +1,21 @@
+.news-item {
+  border-bottom: 1px #999 solid;
+  padding: 5px;
+}
+.news-item__title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.news-item__info {
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+}
+.err {
+  color: #666;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  /*对自身平移*/
+  transform: translate(-50%, -50%);
+}
