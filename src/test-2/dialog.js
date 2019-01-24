@@ -1,4 +1,19 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Link } from 'react-router-dom'
+
+const Item = props => (
+  <Link to={`/detail/${props.id}`}>
+    <div><Dialog
+        title="Mars Exploration Program"
+        message="How should we refer to you?"
+      >
+        <input value={props.login} onChange={this.handleChange} ></input>
+        <button onClick={this.handleSignUp} />
+        Sign me up
+      </Dialog>
+      </div>
+  </Link>
+)
 class SignUpDialog extends Component {
   constructor(props) {
     super(props)
@@ -14,14 +29,10 @@ class SignUpDialog extends Component {
   }
   render() {
     return (
-      <Dialog
-        title="Mars Exploration Program"
-        message="How should we refer to you?"
-      >
-        <input value={this.state.login} onChange={this.handleChange} />
-        <button onClick={this.handleSignUp} />
-        Sign me up
-      </Dialog>
+      <Item
+        login={this.state.login}
+        
+      ></Item>
     )
   }
 }

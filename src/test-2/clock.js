@@ -3,7 +3,7 @@ import React , { Component } from 'react'
 import { BrowserRouter as Link } from 'react-router-dom'
 const Item = props => (
     <Link to={`/detail/${props.id}`}>
-      <div >{props.date}
+      <div >{props.date.toLocaleTimeString()}
       </div>
     </Link>
   )
@@ -28,7 +28,7 @@ render(){
         return(
             <div>
                 <h1>Hello world!</h1>
-                <Item date={this.state.date.toLocaleTimeString()}></Item>
+                <Item date={this.state.date}></Item>
             </div>
         )
     }

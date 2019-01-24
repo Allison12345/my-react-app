@@ -1,4 +1,10 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Link } from 'react-router-dom'
+const Item = props => (
+  <Link to={`/detail/${props.id}`}>
+    <div></div>
+  </Link>
+)
 class LoginControl extends Component {
   constructor(props) {
     super(props)
