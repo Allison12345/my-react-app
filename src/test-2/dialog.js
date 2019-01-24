@@ -1,19 +1,33 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Link } from 'react-router-dom'
 
+function FancyBorder(props) {
+  return (
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+    </div>
+  )
+}
+
+function Dialog(props) {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="dialog-title">{props.title}</h1>
+      <p className="dia-message">{props.message}</p>
+      {props.children}
+    </FancyBorder>
+  )
+}
+
 const Item = props => (
-  <Link to={`/detail/${props.id}`}>
-    <div><Dialog
-        title="Mars Exploration Program"
-        message="How should we refer to you?"
-      >
-        <input value={props.login} onChange={this.handleChange} ></input>
-        <button onClick={this.handleSignUp} />
-        Sign me up
+  <div>
+      <Dialog title="Mars Exploration Program" message="How should we refer to you?">
+         <input value={props.login} onChange={props.handleChange} ></input>
+         <button onClick={props.handleSignUp}>Sign me up</button>
       </Dialog>
-      </div>
-  </Link>
+   </div>
 )
+
 class SignUpDialog extends Component {
   constructor(props) {
     super(props)
@@ -25,31 +39,17 @@ class SignUpDialog extends Component {
     this.setState({ login: e.target.value })
   }
   handleSignUp() {
-    alert('Welcome aboard, ${this.state.login}!')
+    window.alert(`Welcome aboard, ${this.state.login}!`)
   }
   render() {
     return (
       <Item
         login={this.state.login}
-        
-      ></Item>
+        handleChange={this.handleChange}
+        handleSignUp={this.handleSignUp}
+      />
     )
   }
 }
-function FancyBorder(props) {
-  return (
-    <div className={'FancyBorder FancyBorder-' + props.color}>
-      {props.children}
-    </div>
-  )
-}
-function Dialog(props) {
-  return (
-    <FancyBorder color="blue">
-      <h1 className="dialog-title">{props.title}</h1>
-      <p className="dia-message">{props.message}</p>
-      {props.children}
-    </FancyBorder>
-  )
-}
+
 export default SignUpDialog
