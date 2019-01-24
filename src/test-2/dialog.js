@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Link } from 'react-router-dom'
 
 function FancyBorder(props) {
   return (
@@ -19,15 +18,6 @@ function Dialog(props) {
   )
 }
 
-const Item = props => (
-  <div>
-      <Dialog title="Mars Exploration Program" message="How should we refer to you?">
-         <input value={props.login} onChange={props.handleChange} ></input>
-         <button onClick={props.handleSignUp}>Sign me up</button>
-      </Dialog>
-   </div>
-)
-
 class SignUpDialog extends Component {
   constructor(props) {
     super(props)
@@ -43,11 +33,12 @@ class SignUpDialog extends Component {
   }
   render() {
     return (
-      <Item
-        login={this.state.login}
-        handleChange={this.handleChange}
-        handleSignUp={this.handleSignUp}
-      />
+      <Dialog
+        title="Mars Exploration Program"
+        message="How should we refer to you?">
+        <input value={this.login} onChange={this.handleChange} />
+        <button onClick={this.handleSignUp}>Sign me up</button>
+      </Dialog>
     )
   }
 }
