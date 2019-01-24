@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import { BrowserRouter as Link } from 'react-router-dom'
 const Item = props => (
   <Link to={`/detail/${props.id}`}>
-    <div></div>
+    <div>
+      <Greeting isLoggedIn={props.isLoggedIn} />
+      {props.button}
+    </div>
   </Link>
 )
 class LoginControl extends Component {
@@ -28,12 +31,11 @@ class LoginControl extends Component {
     } else {
       button = <LoginButton onClick={this.handleLoginOnclick} />
     }
-    return (
-      <div>
-        <Greeting isLoggedIn={isLoggedIn} />
-        {button}
-      </div>
-    )
+    return <div>
+      <Item
+      isLoggedIn={this.state.isLoggedIn}
+      ></Item>
+    </div>
   }
 }
 function UserGreeting() {
@@ -57,4 +59,3 @@ function LogoutButton(props) {
 }
 
 export default LoginControl
-  
