@@ -10,6 +10,10 @@ import Detail from './pages/detail'
 import NameFrom from './test-2/name-form'
 import Favorfrom from './test-2/select'
 import Calculator from './tem-transfer/tem-transfer'
+import Toggle from './test-2/toggle'
+import Warn from './warn/warn'
+import FilterableProductTable from './table/table'
+import Apply from './apply/Apply'
 class App extends Component {
   render() {
     return (
@@ -40,6 +44,19 @@ class App extends Component {
             <Link to="/calculator" className="weui-cell">
             calculator
             </Link>
+            <Link to="/toggle" className="weui-cell">
+            toggle
+            </Link>
+            <Link to="/warn" className="weui-cell">
+            warn
+            </Link>
+            <Link to="/FilterableProductTable" className="weui-cell">
+            FilterableProductTable
+            </Link>
+            <Link to="/apply" className="weui-cell">
+            apply
+            </Link>
+            
           </div>
           <div style={{ border: '1px solid black', padding: '20px' }}>
             <Route path="/list" component={List} />
@@ -51,6 +68,10 @@ class App extends Component {
             <Route path="/namefrom" component={NameFrom} />
             <Route path="/favorfrom" component={Favorfrom}/>
             <Route path="/calculator" component={Calculator}/>
+            <Route path="/toggle" component={Toggle}/>
+            <Route path="/warn" component={Warn}/>
+            <Route path="/filterableproducttable" component={FilterableProductTable}/>
+            <Route path="/apply" component={Apply}/>
           </div>
         </div>
       </Router>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-class Page extends Component {
+import WarnBanner from './warnbanner'
+class Warn extends Component {
   constructor(props) {
     super(props)
     this.state = { showWarnng: true }
@@ -21,11 +22,5 @@ class Page extends Component {
     )
   }
 }
-function WarnBanner(props) {
-  if (!props.warn) {
-    return null
-  } else {
-    return <div className="warning">warning!</div>
-  }
-}
-export default Page
+
+export default Warn
