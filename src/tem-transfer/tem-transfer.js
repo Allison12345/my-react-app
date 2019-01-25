@@ -1,4 +1,10 @@
 import React, { Component } from 'react'
+import TemperatureInput from './temperatureinput'
+import BoilingVerdict from './boilingverdict'
+import tryConvert from './tryconvert'
+import toFahrenheit from './tofahrenheit'
+import toCelsius from './tocelsius'
+
 class Calculator extends Component {
   constructor(props) {
     super(props)
@@ -39,51 +45,6 @@ class Calculator extends Component {
     )
   }
 }
-function BoilingVerdict(props) {
-  if (props.celsius >= 100) {
-    return <p>The water would boil.</p>
-  }
-  return <p>The water would not boil.</p>
-}
 
-class TemperatureInput extends Component {
-  constructor(props) {
-    super(props)
-    this.handleChange = this.handleChange.bind(this)
-  }
-  handleChange(e) {
-    this.props.onTempertureChange(e.target.value)
-  }
-  render() {
-    const scale = this.props.scale
-    const temperature = this.props.temperature
-    return (
-      <fieldset>
-        <legend>Enter temperature in {scaleNames[scale]}:</legend>
-        <input value={temperature} onChange={this.handleChange} />
-      </fieldset>
-    )
-  }
-}
-const scaleNames = {
-  c: 'Celsius',
-  f: 'Fahrenheit'
-}
-function toCelsius(fahrenheit) {
-  return ((fahrenheit - 32) * 5) / 9
-}
-
-function toFahrenheit(celsius) {
-  return (celsius * 9) / 5 + 32
-}
-function tryConvert(temperature, convert) {
-  const input = parseFloat(temperature)
-  if (Number.isNaN(input)) {
-    return ''
-  }
-  const output = convert(input)
-  const rounded = Math.round(output * 1000) / 1000
-  return rounded.toString()
-}
 
 export default Calculator

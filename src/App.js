@@ -8,6 +8,8 @@ import LoginControl from './login/login'
 import List from './pages/list'
 import Detail from './pages/detail'
 import NameFrom from './test-2/name-form'
+import Favorfrom from './test-2/select'
+import Calculator from './tem-transfer/tem-transfer'
 class App extends Component {
   render() {
     return (
@@ -32,6 +34,12 @@ class App extends Component {
             <Link to="/namefrom" className="weui-cell">
               namefrom
             </Link>
+            <Link to="/favorfrom" className="weui-cell">
+              favorfrom
+            </Link>
+            <Link to="/calculator" className="weui-cell">
+            calculator
+            </Link>
           </div>
           <div style={{ border: '1px solid black', padding: '20px' }}>
             <Route path="/list" component={List} />
@@ -41,6 +49,8 @@ class App extends Component {
             <Route path="/signupdialog" component={SignUPDiglog} />
             <Route path="/logincontrol" component={LoginControl} />
             <Route path="/namefrom" component={NameFrom} />
+            <Route path="/favorfrom" component={Favorfrom}/>
+            <Route path="/calculator" component={Calculator}/>
           </div>
         </div>
       </Router>
