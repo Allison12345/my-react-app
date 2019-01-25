@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
+import Square from './square'
 
-function Square(props) {
-  return (
-    <button className="squre" onClick={props.onClick}>
-      {props.value}
-    </button>
-  )
-}
 class Board extends Component {
   renderSquare(i) {
     return (

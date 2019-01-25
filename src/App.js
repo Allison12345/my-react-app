@@ -14,6 +14,7 @@ import Toggle from './test-2/toggle'
 import Warn from './warn/warn'
 import FilterableProductTable from './table/table'
 import Apply from './apply/Apply'
+import Game from './game/tic-tac-toe'
 class App extends Component {
   render() {
     return (
@@ -56,7 +57,9 @@ class App extends Component {
             <Link to="/apply" className="weui-cell">
             apply
             </Link>
-            
+            <Link to="/game" className="weui-cell">
+            game
+            </Link>
           </div>
           <div style={{ border: '1px solid black', padding: '20px' }}>
             <Route path="/list" component={List} />
@@ -72,6 +75,7 @@ class App extends Component {
             <Route path="/warn" component={Warn}/>
             <Route path="/filterableproducttable" component={FilterableProductTable}/>
             <Route path="/apply" component={Apply}/>
+            <Route path="/game" component={Game}/>
           </div>
         </div>
       </Router>
