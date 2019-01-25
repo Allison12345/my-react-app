@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React  from 'react'
 
-  
+const numbers = [1,2,3,4,5]
 function ListItem(props) {
   return <li>{props.value}</li>
 }
@@ -11,5 +11,4 @@ function NumberList(props) {
   ))
   return <ul>{listItems}</ul>
 }
-const numbers = [1,2,3,4,5]
 export default NumberList

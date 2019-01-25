@@ -7,7 +7,7 @@ import SignUPDiglog from './signupdialog/signupdialog'
 import LoginControl from './login/login'
 import List from './pages/list'
 import Detail from './pages/detail'
-
+import NameFrom from './test-2/name-form'
 class App extends Component {
   render() {
     return (
@@ -29,6 +29,9 @@ class App extends Component {
             <Link to="/logincontrol" className="weui-cell">
               logincontrol
             </Link>
+            <Link to="/namefrom" className="weui-cell">
+              namefrom
+            </Link>
           </div>
           <div style={{ border: '1px solid black', padding: '20px' }}>
             <Route path="/list" component={List} />
@@ -37,6 +40,7 @@ class App extends Component {
             <Route path="/comment" component={Commently} />
             <Route path="/signupdialog" component={SignUPDiglog} />
             <Route path="/logincontrol" component={LoginControl} />
+            <Route path="/namefrom" component={NameFrom} />
           </div>
         </div>
       </Router>
