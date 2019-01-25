@@ -1,22 +1,5 @@
 import React, { Component } from 'react'
-
-function FancyBorder(props) {
-  return (
-    <div className={'FancyBorder FancyBorder-' + props.color}>
-      {props.children}
-    </div>
-  )
-}
-
-function Dialog(props) {
-  return (
-    <FancyBorder color="blue">
-      <h1 className="dialog-title">{props.title}</h1>
-      <p className="dia-message">{props.message}</p>
-      {props.children}
-    </FancyBorder>
-  )
-}
+import Dialog from './dialog'
 
 class SignUpDialog extends Component {
   constructor(props) {
