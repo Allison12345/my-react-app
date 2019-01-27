@@ -14,9 +14,6 @@ class Apply extends Component {
       persons: ['hello', 'hi', 'world'],
       name: 'aijiao'
     }
-    const arr1 = [1, 2, 3]
-    const arr2 = arr1.slice()
-    const arr3 = [...arr1, 4, 5, 6]
   }
   onClick = () => {
     const persons = this.state.persons

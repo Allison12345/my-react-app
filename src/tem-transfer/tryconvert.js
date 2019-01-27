@@ -1,4 +1,3 @@
-import React from 'react'
 function tryConvert(temperature, convert) {
   const input = parseFloat(temperature)
   if (Number.isNaN(input)) {
